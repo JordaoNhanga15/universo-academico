@@ -21,7 +21,7 @@ const NewsList = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   
-  // Calculate total pages
+  // Calcular total de páginas
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const NewsList = () => {
         setNews(result.news);
         setTotalItems(result.total);
       } catch (error) {
-        console.error("Error fetching news:", error);
+        console.error("Erro ao buscar notícias:", error);
       } finally {
         setIsLoading(false);
       }
@@ -50,7 +50,7 @@ const NewsList = () => {
 
   const handleCategorySelect = (selectedCategoryId?: number) => {
     const params = new URLSearchParams();
-    params.set("page", "1"); // Reset to page 1 when changing category
+    params.set("page", "1"); // Resetar para a página 1 ao mudar de categoria
     if (selectedCategoryId) {
       params.set("category", selectedCategoryId.toString());
     }
@@ -61,22 +61,22 @@ const NewsList = () => {
     <MainLayout>
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto mb-10 text-center">
-          <h1 className="text-4xl font-serif font-bold mb-4">Academic News & Publications</h1>
+          <h1 className="text-4xl font-serif font-bold mb-4">Notícias e Publicações Acadêmicas</h1>
           <p className="text-muted-foreground">
-            Discover the latest research, educational insights, and academic developments from around the world.
+            Descubra as últimas pesquisas, insights educacionais e desenvolvimentos acadêmicos de todo o mundo.
           </p>
         </div>
 
-        {/* Category Filter */}
+        {/* Filtro de Categoria */}
         <div className="mb-8">
-          <h2 className="text-lg font-medium mb-3">Filter by Category</h2>
+          <h2 className="text-lg font-medium mb-3">Filtrar por Categoria</h2>
           <CategoryFilter 
             selectedCategoryId={categoryId} 
             onSelectCategory={handleCategorySelect} 
           />
         </div>
 
-        {/* News Grid */}
+        {/* Grade de Notícias */}
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
@@ -92,9 +92,9 @@ const NewsList = () => {
           </div>
         ) : news.length === 0 ? (
           <div className="text-center py-12">
-            <h3 className="text-xl font-medium mb-2">No articles found</h3>
+            <h3 className="text-xl font-medium mb-2">Nenhum artigo encontrado</h3>
             <p className="text-muted-foreground">
-              No articles match your current filter criteria. Try selecting a different category.
+              Nenhum artigo corresponde aos seus critérios de filtro atuais. Tente selecionar uma categoria diferente.
             </p>
           </div>
         ) : (
@@ -105,7 +105,7 @@ const NewsList = () => {
           </div>
         )}
 
-        {/* Pagination */}
+        {/* Paginação */}
         {!isLoading && totalPages > 1 && (
           <div className="mt-12">
             <CustomPagination 
