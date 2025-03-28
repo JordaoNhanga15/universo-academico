@@ -64,9 +64,9 @@ const Footer = () => {
             <div className="mt-6">
               <h4 className="font-medium mb-4">Contato</h4>
               <address className="not-italic text-academia-100">
-                1234 Academic Way<br />
-                Research Park, CA 94305<br />
-                contact@universoacademia.com
+              Bairro Capolo II, Rua A4 Nº. 14 <br />
+              Kilamba Kiaxi  94305<br />
+              secretariadoexecutivodautanga@gmail.com
               </address>
             </div>
           </div>
