@@ -107,6 +107,9 @@ export const getNewsItems = (page = 1, limit = 3, categoryId?: number): Promise<
     ? NEWS_ITEMS.filter(news => news.categoryId === categoryId) 
     : NEWS_ITEMS;
   
+  // Filter out hidden news for non-admin views
+  filteredNews = filteredNews.filter(news => !news.hidden);
+  
   // Sort by publish date (newest first)
   filteredNews = [...filteredNews].sort((a, b) => 
     new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
@@ -133,7 +136,85 @@ export const getCategories = (): Promise<Category[]> => {
 };
 
 export const getFeaturedNews = (): Promise<News[]> => {
-  return Promise.resolve(NEWS_ITEMS.filter(news => news.featured));
+  return Promise.resolve(NEWS_ITEMS.filter(news => news.featured && !news.hidden));
+};
+
+// Admin functions
+export const getAllNews = (): Promise<News[]> => {
+  // Return all news, including hidden ones, sorted by date (newest first)
+  const sortedNews = [...NEWS_ITEMS].sort((a, b) => 
+    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+  );
+  return Promise.resolve(sortedNews);
+};
+
+export const createNewsItem = (newsData: Partial<News>): Promise<News> => {
+  // Simulate creating a new news item
+  const newId = Math.max(...NEWS_ITEMS.map(item => item.id)) + 1;
+  
+  const newNewsItem: News = {
+    id: newId,
+    title: newsData.title || "Untitled",
+    summary: newsData.summary || "",
+    content: newsData.content || "",
+    imageUrl: newsData.imageUrl || "https://images.unsplash.com/photo-1575505586569-646b2ca898fc",
+    publishDate: newsData.publishDate || new Date().toISOString(),
+    authorName: newsData.authorName || "Unknown Author",
+    categoryId: newsData.categoryId || 1,
+    featured: newsData.featured || false,
+    tags: newsData.tags || [],
+  };
+  
+  NEWS_ITEMS.push(newNewsItem);
+  return Promise.resolve(newNewsItem);
+};
+
+export const updateNewsItem = (id: number, updateData: Partial<News>): Promise<News> => {
+  // Find the news item to update
+  const index = NEWS_ITEMS.findIndex(item => item.id === id);
+  
+  if (index === -1) {
+    return Promise.reject(new Error("News item not found"));
+  }
+  
+  // Update the news item
+  NEWS_ITEMS[index] = {
+    ...NEWS_ITEMS[index],
+    ...updateData,
+  };
+  
+  return Promise.resolve(NEWS_ITEMS[index]);
+};
+
+export const toggleNewsVisibility = (id: number, hidden: boolean): Promise<News> => {
+  // Find the news item to toggle
+  const index = NEWS_ITEMS.findIndex(item => item.id === id);
+  
+  if (index === -1) {
+    return Promise.reject(new Error("News item not found"));
+  }
+  
+  // Toggle visibility
+  NEWS_ITEMS[index] = {
+    ...NEWS_ITEMS[index],
+    hidden,
+  };
+  
+  return Promise.resolve(NEWS_ITEMS[index]);
+};
+
+export const deleteNewsItem = (id: number): Promise<boolean> => {
+  // Find the news item index
+  const index = NEWS_ITEMS.findIndex(item => item.id === id);
+  
+  if (index === -1) {
+    return Promise.reject(new Error("News item not found"));
+  }
+  
+  // Remove the news item from the array
+  NEWS_ITEMS.splice(index, 1);
+  
+  return Promise.resolve(true);
 };
 
 // Future functions for user interactions

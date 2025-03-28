@@ -10,4 +10,5 @@ export interface News {
   categoryId: number;
   featured?: boolean;
   tags?: string[];
+  hidden?: boolean;
 }
