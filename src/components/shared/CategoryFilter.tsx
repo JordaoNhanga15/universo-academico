@@ -44,7 +44,7 @@ const CategoryFilter = ({ selectedCategoryId, onSelectCategory }: CategoryFilter
         onClick={() => onSelectCategory(undefined)}
         className="font-normal"
       >
-        All
+        Todos
       </Button>
       
       {categories.map(category => (

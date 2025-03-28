@@ -4,99 +4,99 @@ import { Category } from "@/models/category.model";
 
 // Mock data for development
 const CATEGORIES: Category[] = [
-  { id: 1, name: "Science", slug: "science", description: "Latest scientific discoveries and research" },
-  { id: 2, name: "Humanities", slug: "humanities", description: "History, literature, and cultural studies" },
-  { id: 3, name: "Technology", slug: "technology", description: "Technology innovations and applications" },
-  { id: 4, name: "Arts", slug: "arts", description: "Visual and performing arts updates" },
-  { id: 5, name: "Education", slug: "education", description: "Educational policies and developments" },
+  { id: 1, name: "Ciência", slug: "ciencia", description: "Últimas descobertas e pesquisas científicas" },
+  { id: 2, name: "Humanidades", slug: "humanidades", description: "História, literatura e estudos culturais" },
+  { id: 3, name: "Tecnologia", slug: "tecnologia", description: "Inovações e aplicações tecnológicas" },
+  { id: 4, name: "Artes", slug: "artes", description: "Atualizações sobre artes visuais e performáticas" },
+  { id: 5, name: "Educação", slug: "educacao", description: "Políticas e desenvolvimentos educacionais" },
 ];
 
 const NEWS_ITEMS: News[] = [
   {
     id: 1,
-    title: "New Research Reveals Potential Breakthrough in Quantum Computing",
-    summary: "Scientists have discovered a novel approach to quantum bit stabilization that could revolutionize quantum computing.",
-    content: `<p>Researchers at the Institute for Quantum Innovation have announced a breakthrough in quantum bit (qubit) stabilization, potentially solving one of the biggest obstacles in quantum computing development.</p>
-    <p>"This discovery could accelerate the development of practical quantum computers by several years," said lead researcher Dr. Maria Chen. "By using a new approach to maintaining quantum coherence, we've been able to extend qubit stability by orders of magnitude."</p>
-    <p>The research, published today in the Journal of Quantum Physics, demonstrates a novel technique for protecting qubits from environmental interference, one of the primary challenges in developing practical quantum computers.</p>
-    <p>This breakthrough could have significant implications for fields ranging from cryptography to drug discovery, potentially enabling computational tasks that would be impossible with classical computers.</p>`,
+    title: "Nova Pesquisa Revela Potencial Avanço na Computação Quântica",
+    summary: "Cientistas descobriram uma nova abordagem para estabilização de bits quânticos que pode revolucionar a computação quântica.",
+    content: `<p>Pesquisadores do Instituto de Inovação Quântica anunciaram um avanço na estabilização de bits quânticos (qubits), potencialmente resolvendo um dos maiores obstáculos no desenvolvimento da computação quântica.</p>
+    <p>"Essa descoberta pode acelerar o desenvolvimento de computadores quânticos práticos em vários anos", disse a pesquisadora principal Dra. Maria Chen. "Ao usar uma nova abordagem para manter a coerência quântica, conseguimos estender a estabilidade dos qubits por ordens de magnitude."</p>
+    <p>A pesquisa, publicada hoje no Journal of Quantum Physics, demonstra uma técnica inovadora para proteger qubits da interferência ambiental, um dos principais desafios no desenvolvimento de computadores quânticos práticos.</p>
+    <p>Este avanço pode ter implicações significativas em áreas que vão da criptografia à descoberta de medicamentos, potencialmente permitindo tarefas computacionais que seriam impossíveis com computadores clássicos.</p>`,
     imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb",
     publishDate: "2023-06-15T09:30:00Z",
-    authorName: "Dr. Maria Chen",
+    authorName: "Dra. Maria Chen",
     categoryId: 1,
     featured: true,
-    tags: ["quantum", "computing", "research", "technology"],
+    tags: ["quântica", "computação", "pesquisa", "tecnologia"],
   },
   {
     id: 2,
-    title: "Archaeological Discovery Rewrites Early Human History",
-    summary: "New findings in East Africa suggest human civilization may be thousands of years older than previously thought.",
-    content: `<p>An archaeological expedition in East Africa has uncovered evidence that could fundamentally alter our understanding of early human civilization. The findings suggest organized human settlements existed up to 5,000 years earlier than previously established.</p>
-    <p>"These discoveries challenge everything we thought we knew about the timeline of human development," explained Dr. Jonathan Mbeki, lead archaeologist on the expedition. "The complexity of the structures and artifacts indicates a sophisticated society that existed millennia before what current theories suggest."</p>
-    <p>The site contains evidence of complex social structures, early agricultural practices, and even primitive writing systems that predate known examples by thousands of years.</p>
-    <p>This discovery may require historians to reconsider the entire chronology of human civilization and development.</p>`,
+    title: "Descoberta Arqueológica Reescreve História da Humanidade",
+    summary: "Novos achados na África Oriental sugerem que a civilização humana pode ser milhares de anos mais antiga do que se pensava anteriormente.",
+    content: `<p>Uma expedição arqueológica na África Oriental descobriu evidências que poderiam alterar fundamentalmente nossa compreensão da civilização humana primitiva. Os achados sugerem que assentamentos humanos organizados existiam até 5.000 anos antes do que se estabeleceu anteriormente.</p>
+    <p>"Essas descobertas desafiam tudo o que pensávamos saber sobre o cronograma do desenvolvimento humano", explicou o arqueólogo principal da expedição, Dr. Jonathan Mbeki. "A complexidade das estruturas e artefatos indica uma sociedade sofisticada que existia milênios antes do que as teorias atuais sugerem."</p>
+    <p>O sítio contém evidências de estruturas sociais complexas, práticas agrícolas iniciais e até sistemas de escrita primitivos que antecedem exemplos conhecidos em milhares de anos.</p>
+    <p>Essa descoberta pode exigir que os historiadores reconsiderem toda a cronologia da civilização e desenvolvimento humanos.</p>`,
     imageUrl: "https://images.unsplash.com/photo-1575505586569-646b2ca898fc",
     publishDate: "2023-07-02T14:15:00Z",
     authorName: "Dr. Jonathan Mbeki",
     categoryId: 2,
-    tags: ["archaeology", "history", "anthropology"],
+    tags: ["arqueologia", "história", "antropologia"],
   },
   {
     id: 3,
-    title: "AI System Demonstrates Unprecedented Language Understanding",
-    summary: "A new artificial intelligence model shows remarkable comprehension of nuanced human communication.",
-    content: `<p>Computer scientists have developed an AI system that demonstrates unprecedented understanding of contextual language, including idioms, cultural references, and implied meanings.</p>
-    <p>"What makes this system unique is its ability to understand language the way humans do, including cultural context and unstated implications," said Dr. Sophia Park, the project lead.</p>
-    <p>Unlike previous language models that rely primarily on pattern recognition, this new system incorporates elements of cognitive science and linguistics to achieve a deeper semantic understanding.</p>
-    <p>The technology could revolutionize human-computer interaction, making digital assistants, translation services, and other language-based technologies significantly more effective and natural.</p>`,
+    title: "Sistema de IA Demonstra Compreensão Inédita da Linguagem",
+    summary: "Um novo modelo de inteligência artificial mostra uma compreensão notável da comunicação humana com nuances.",
+    content: `<p>Cientistas da computação desenvolveram um sistema de IA que demonstra uma compreensão inédita da linguagem contextual, incluindo expressões idiomáticas, referências culturais e significados implícitos.</p>
+    <p>"O que torna este sistema único é sua capacidade de entender a linguagem como os humanos, incluindo o contexto cultural e implicações não declaradas", disse a líder do projeto, Dra. Sophia Park.</p>
+    <p>Ao contrário dos modelos de linguagem anteriores que dependem principalmente do reconhecimento de padrões, este novo sistema incorpora elementos da ciência cognitiva e da linguística para alcançar uma compreensão semântica mais profunda.</p>
+    <p>A tecnologia pode revolucionar a interação humano-computador, tornando assistentes digitais, serviços de tradução e outras tecnologias baseadas em linguagem significativamente mais eficazes e naturais.</p>`,
     imageUrl: "https://images.unsplash.com/photo-1677442135136-760c813dce9b",
     publishDate: "2023-07-10T11:45:00Z",
-    authorName: "Dr. Sophia Park",
+    authorName: "Dra. Sophia Park",
     categoryId: 3,
     featured: true,
-    tags: ["artificial intelligence", "language", "technology"],
+    tags: ["inteligência artificial", "linguagem", "tecnologia"],
   },
   {
     id: 4,
-    title: "Novel Teaching Methodology Shows Dramatic Improvement in Learning Outcomes",
-    summary: "Educators report significant gains in student performance using a new interdisciplinary approach.",
-    content: `<p>A five-year study across multiple educational institutions has demonstrated that a new interdisciplinary teaching methodology significantly improves learning outcomes across all subject areas.</p>
-    <p>"By integrating concepts across traditional subject boundaries and emphasizing practical application, we're seeing students not only retain information better but develop stronger critical thinking skills," explained education researcher Dr. James Wong.</p>
-    <p>The approach, known as Integrated Conceptual Learning (ICL), combines elements of project-based learning, flipped classroom models, and cross-disciplinary connections to create a more cohesive educational experience.</p>
-    <p>Schools implementing ICL reported an average 35% improvement in standardized test scores and significantly higher student engagement.</p>`,
+    title: "Nova Metodologia de Ensino Mostra Melhoria Dramática nos Resultados de Aprendizagem",
+    summary: "Educadores relatam ganhos significativos no desempenho dos alunos usando uma nova abordagem interdisciplinar.",
+    content: `<p>Um estudo de cinco anos em várias instituições educacionais demonstrou que uma nova metodologia de ensino interdisciplinar melhora significativamente os resultados de aprendizagem em todas as áreas do conhecimento.</p>
+    <p>"Ao integrar conceitos entre as fronteiras tradicionais das disciplinas e enfatizar a aplicação prática, estamos vendo os alunos não apenas reterem melhor as informações, mas desenvolverem habilidades de pensamento crítico mais fortes", explicou o pesquisador educacional Dr. James Wong.</p>
+    <p>A abordagem, conhecida como Aprendizagem Conceitual Integrada (ICL), combina elementos de aprendizado baseado em projetos, modelos de sala de aula invertida e conexões interdisciplinares para criar uma experiência educacional mais coesa.</p>
+    <p>As escolas que implementaram o ICL relataram uma melhoria média de 35% nas pontuações dos testes padronizados e um engajamento significativamente maior dos alunos.</p>`,
     imageUrl: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45",
     publishDate: "2023-08-05T10:00:00Z",
     authorName: "Dr. James Wong",
     categoryId: 5,
-    tags: ["education", "teaching", "methodology", "learning"],
+    tags: ["educação", "ensino", "metodologia", "aprendizagem"],
   },
   {
     id: 5,
-    title: "Climate Research Reveals Unexpected Carbon Sequestration Mechanism",
-    summary: "Scientists discover a previously unknown natural process that captures atmospheric carbon.",
-    content: `<p>Climate scientists have identified a previously unknown mechanism by which certain geological formations actively capture and sequester atmospheric carbon dioxide at rates far exceeding previous estimates.</p>
-    <p>"This discovery doesn't solve the climate crisis, but it does reveal that the Earth's natural systems for carbon management are more complex and potentially more resilient than we've understood," said geologist Dr. Amara Okafor.</p>
-    <p>The research, conducted across multiple continents over seven years, identified specific mineral formations that, under certain conditions, can absorb atmospheric carbon at rates up to 30 times higher than typical carbon sinks.</p>
-    <p>This finding could inform new approaches to engineered carbon capture systems and provide a more accurate understanding of global carbon cycles.</p>`,
+    title: "Pesquisa Climática Revela Mecanismo Inesperado de Sequestro de Carbono",
+    summary: "Cientistas descobrem um processo natural anteriormente desconhecido que captura carbono atmosférico.",
+    content: `<p>Cientistas climáticos identificaram um mecanismo anteriormente desconhecido pelo qual certas formações geológicas capturam e sequestram ativamente dióxido de carbono atmosférico em taxas muito superiores às estimativas anteriores.</p>
+    <p>"Essa descoberta não resolve a crise climática, mas revela que os sistemas naturais da Terra para a gestão do carbono são mais complexos e potencialmente mais resilientes do que entendíamos", disse a geóloga Dra. Amara Okafor.</p>
+    <p>A pesquisa, conduzida em vários continentes ao longo de sete anos, identificou formações minerais específicas que, sob certas condições, podem absorver carbono atmosférico em taxas até 30 vezes superiores aos sumidouros de carbono típicos.</p>
+    <p>Essa descoberta poderia informar novas abordagens para sistemas de captura de carbono projetados e fornecer uma compreensão mais precisa dos ciclos globais de carbono.</p>`,
     imageUrl: "https://images.unsplash.com/photo-1440342359743-84fcb8c21f21",
     publishDate: "2023-08-12T16:20:00Z",
-    authorName: "Dr. Amara Okafor",
+    authorName: "Dra. Amara Okafor",
     categoryId: 1,
-    tags: ["climate", "carbon sequestration", "environmental science"],
+    tags: ["clima", "sequestro de carbono", "ciência ambiental"],
   },
   {
     id: 6,
-    title: "New Technique Allows Direct Observation of Quantum Entanglement",
-    summary: "Physicists develop method to visualize quantum entanglement effects in real-time.",
-    content: `<p>A team of physicists has developed a groundbreaking technique that allows for the direct observation of quantum entanglement, a phenomenon Albert Einstein famously referred to as "spooky action at a distance."</p>
-    <p>"Until now, we could only infer entanglement indirectly through statistical measurements," explained lead researcher Dr. Hiroshi Tanaka. "This new method allows us to actually observe the effects of entanglement as they occur."</p>
-    <p>The technique combines advanced imaging methods with novel quantum sensors to visualize how the quantum states of entangled particles correlate regardless of the distance between them.</p>
-    <p>Beyond its profound implications for fundamental physics, this development could accelerate practical applications in quantum computing, secure communications, and quantum cryptography.</p>`,
+    title: "Nova Técnica Permite Observação Direta do Emaranhamento Quântico",
+    summary: "Físicos desenvolvem método para visualizar efeitos do emaranhamento quântico em tempo real.",
+    content: `<p>Uma equipe de físicos desenvolveu uma técnica inovadora que permite a observação direta do emaranhamento quântico, um fenômeno que Albert Einstein chamou de "ação fantasmagórica à distância".</p>
+    <p>"Até agora, só podíamos inferir o emaranhamento indiretamente através de medições estatísticas", explicou o pesquisador principal Dr. Hiroshi Tanaka. "Este novo método nos permite observar os efeitos do emaranhamento à medida que ocorrem."</p>
+    <p>A técnica combina métodos avançados de imagem com novos sensores quânticos para visualizar como os estados quânticos das partículas emaranhadas se correlacionam, independentemente da distância entre elas.</p>
+    <p>Além de suas implicações profundas para a física fundamental, esse desenvolvimento pode acelerar aplicações práticas em computação quântica, comunicações seguras e criptografia quântica.</p>`,
     imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb",
     publishDate: "2023-08-20T13:10:00Z",
     authorName: "Dr. Hiroshi Tanaka",
     categoryId: 1,
-    tags: ["quantum physics", "entanglement", "research"],
+    tags: ["física quântica", "emaranhamento", "pesquisa"],
   }
 ];
 

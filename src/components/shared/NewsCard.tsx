@@ -57,7 +57,7 @@ const NewsCard = ({ news, compact = false }: NewsCardProps) => {
         <Button asChild variant="ghost" className="gap-2">
           <Link to={`/news/${news.id}`}>
             <BookOpen size={16} />
-            Read More
+            Ler mais
           </Link>
         </Button>
       </CardFooter>

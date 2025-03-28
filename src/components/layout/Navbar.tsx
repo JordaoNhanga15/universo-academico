@@ -28,16 +28,16 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-xl font-serif font-bold text-academia-600">Universo Academia</span>
+            <span className="text-xl font-serif font-bold text-academia-600">Universo Acadêmico</span>
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/" className="text-academia-600 hover:text-academia-500">
-              Home
+              Início
             </Link>
             <Link to="/news" className="text-academia-600 hover:text-academia-500">
-              News
+              Notícias
             </Link>
             {isAuthenticated && user?.role === "admin" && (
               <Link to="/admin" className="text-academia-600 hover:text-academia-500">
@@ -58,11 +58,11 @@ const Navbar = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Perfil</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="gap-2 text-red-500">
                     <LogOut size={16} />
-                    Logout
+                    Sair
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -72,7 +72,7 @@ const Navbar = () => {
                   <Link to="/login">Login</Link>
                 </Button>
                 <Button asChild>
-                  <Link to="/register">Register</Link>
+                  <Link to="/register">Registrar</Link>
                 </Button>
               </>
             )}
@@ -92,10 +92,10 @@ const Navbar = () => {
           <div className="md:hidden pt-4 pb-4 border-t mt-3">
             <nav className="flex flex-col gap-4">
               <Link to="/" className="text-academia-600 hover:text-academia-500" onClick={() => setIsMenuOpen(false)}>
-                Home
+                Início
               </Link>
               <Link to="/news" className="text-academia-600 hover:text-academia-500" onClick={() => setIsMenuOpen(false)}>
-                News
+                Notícias
               </Link>
               {isAuthenticated && user?.role === "admin" && (
                 <Link to="/admin" className="text-academia-600 hover:text-academia-500" onClick={() => setIsMenuOpen(false)}>
@@ -105,11 +105,11 @@ const Navbar = () => {
               {isAuthenticated ? (
                 <>
                   <div className="pt-2 border-t">
-                    <p className="text-sm text-muted-foreground">Signed in as {user?.name}</p>
+                    <p className="text-sm text-muted-foreground">Logado como {user?.name}</p>
                   </div>
                   <Button variant="ghost" className="justify-start pl-0 hover:bg-transparent" onClick={() => { handleLogout(); setIsMenuOpen(false); }}>
                     <LogOut size={16} className="mr-2" />
-                    Logout
+                    Sair
                   </Button>
                 </>
               ) : (
@@ -118,7 +118,7 @@ const Navbar = () => {
                     <Link to="/login" onClick={() => setIsMenuOpen(false)}>Login</Link>
                   </Button>
                   <Button asChild>
-                    <Link to="/register" onClick={() => setIsMenuOpen(false)}>Register</Link>
+                    <Link to="/register" onClick={() => setIsMenuOpen(false)}>Registrar</Link>
                   </Button>
                 </div>
               )}
@@ -129,5 +129,4 @@ const Navbar = () => {
     </header>
   );
 };
-
 export default Navbar;

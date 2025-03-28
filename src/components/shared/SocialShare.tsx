@@ -41,7 +41,7 @@ const SocialShare = ({ title, url = window.location.href }: SocialShareProps) =>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="gap-2">
           <Share2 size={16} />
-          Share
+          Compartilhar
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -59,7 +59,7 @@ const SocialShare = ({ title, url = window.location.href }: SocialShareProps) =>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleCopyLink} className="cursor-pointer gap-2">
           <LinkIcon size={16} />
-          Copy Link
+          Copiar Link
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -32,14 +32,14 @@ const SubscriptionForm = () => {
       if (success) {
         setIsSubscribed(true);
         toast({
-          title: "Subscription Successful",
-          description: "Thank you for subscribing to our newsletter!",
+          title: "Inscrição bem-sucedida",
+          description: "Obrigado por se inscrever na nossa newsletter!",
         });
       }
     } catch (error) {
       toast({
-        title: "Subscription Failed",
-        description: "There was an error processing your subscription. Please try again.",
+        title: "Falha na inscrição",
+        description: "Houve um erro ao processar sua inscrição. Por favor, tente novamente.",
         variant: "destructive",
       });
     }
@@ -49,7 +49,7 @@ const SubscriptionForm = () => {
     return (
       <div className="p-4 bg-green-50 text-green-800 rounded-md flex items-center gap-2">
         <CheckCircle size={18} className="text-green-600" />
-        <p>Thank you for subscribing! You'll receive updates soon.</p>
+        <p>Obrigado por se inscrever! Você receberá atualizações em breve.</p>
       </div>
     );
   }
@@ -67,13 +67,13 @@ const SubscriptionForm = () => {
                   <div className="relative flex-grow">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
                     <Input
-                      placeholder="Your email address"
+                      placeholder="Seu endereço de e-mail"
                       {...field}
                       className="pl-9"
                     />
                   </div>
                   <Button type="submit" disabled={form.formState.isSubmitting}>
-                    {form.formState.isSubmitting ? "Subscribing..." : "Subscribe"}
+                    {form.formState.isSubmitting ? "Inscrevendo..." : "Inscrever"}
                   </Button>
                 </div>
               </FormControl>
