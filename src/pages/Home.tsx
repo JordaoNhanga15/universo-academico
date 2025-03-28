@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import MainLayout from "@/components/layout/MainLayout";
 import NewsCard from "@/components/shared/NewsCard";
+import SubscriptionForm from "@/components/shared/SubscriptionForm";
 import { News } from "@/models/news.model";
 import { getFeaturedNews, getNewsItems } from "@/services/news.service";
 import { ChevronRight } from "lucide-react";
