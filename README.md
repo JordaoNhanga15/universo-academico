@@ -1,69 +1,60 @@
-# Welcome to your Lovable project
+# Universo Academia - Portal de Notícias
 
-## Project info
+Bem-vindo ao Universo Academia, um portal de notícias desenvolvido com as tecnologias mais modernas para proporcionar a melhor experiência aos seus usuários.
 
-**URL**: https://lovable.dev/projects/71671d22-54df-4805-b80a-3249a897e618
+## 🔧 Tech Stack
 
-## How can I edit this code?
+- **Frontend:** React (Vite)
+- **UI Library:** shadcn/ui, TailwindCSS
+- **Backend:** AdonisJS
+- **Database:** MySQL
+- **Authentication:** JWT (JSON Web Token)
 
-There are several ways of editing your application.
+## 📜 Funcionalidades
 
-**Use Lovable**
+### 🖥 Backoffice (Admin)
+- Gestão de notícias
+- Controle de categorias
+- Administração de usuários
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/71671d22-54df-4805-b80a-3249a897e618) and start prompting.
+### 🌍 Portal Público
+- Exibição de notícias
+- Categorias de notícias
+- Destaques do dia
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📝 Estrutura de Páginas
 
-**Use your preferred IDE**
+- **Home:** Exibe notícias recentes, categorias e destaques
+- **Detalhes da Notícia:** Exibição do conteúdo completo
+- **Login/Admin:** Área para gerenciar notícias
+- **Cadastro de Assinantes:** Formulário para receber atualizações
+- **404 Page:** Página personalizada para erros
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ⚙ Instalação e Configuração
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### 1️⃣ Clonar o Repositório
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/JordaoNhanga15/stellar-academia-portal.git
+cd universo-academia
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2️⃣ Instalar Dependências
 
-# Step 3: Install the necessary dependencies.
-npm i
+```sh
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 3️⃣ Rodar o Projeto
+
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📄 Licença
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Este projeto está licenciado sob a MIT License.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/71671d22-54df-4805-b80a-3249a897e618) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Desenvolvido por **EINK 4.1 UTANGA (2024-2025)**
