@@ -35,7 +35,7 @@ Bem-vindo ao Universo Academia, um portal de notícias desenvolvido com as tecno
 ### 1️⃣ Clonar o Repositório
 
 ```sh
-git clone https://github.com/JordaoNhanga15/stellar-academia-portal.git
+git clone https://github.com/JordaoNhanga15/universo-academico.git
 cd universo-academia
 ```
 
