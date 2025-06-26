@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Plus, Eye, EyeOff, Trash2, Pencil } from "lucide-react";
@@ -112,12 +111,12 @@ const Admin = () => {
         tags: tagsArray,
         publishDate: new Date().toISOString()
       });
-      toast.success("News created successfully");
+      toast.success("Notícia criada com sucesso");
       resetForm();
       setIsCreateDialogOpen(false);
       refetchNews();
     } catch (error) {
-      toast.error("Failed to create news");
+      toast.error("Falha ao criar notícia");
       console.error(error);
     }
   };
@@ -132,11 +131,11 @@ const Admin = () => {
         ...newsForm,
         tags: tagsArray
       });
-      toast.success("News updated successfully");
+      toast.success("Notícia atualizada com sucesso");
       setIsEditDialogOpen(false);
       refetchNews();
     } catch (error) {
-      toast.error("Failed to update news");
+      toast.error("Falha ao atualizar notícia");
       console.error(error);
     }
   };
@@ -145,23 +144,23 @@ const Admin = () => {
   const handleToggleVisibility = async (newsId: number, currentlyHidden: boolean) => {
     try {
       await toggleNewsVisibility(newsId, !currentlyHidden);
-      toast.success(`News ${currentlyHidden ? 'published' : 'unpublished'} successfully`);
+      toast.success(`Notícia ${currentlyHidden ? 'publicada' : 'despublicada'} com sucesso`);
       refetchNews();
     } catch (error) {
-      toast.error(`Failed to ${currentlyHidden ? 'publish' : 'unpublish'} news`);
+      toast.error(`Falha ao ${currentlyHidden ? 'publicar' : 'despublicar'} notícia`);
       console.error(error);
     }
   };
 
   // Handle news deletion
   const handleDeleteNews = async (newsId: number) => {
-    if (confirm("Are you sure you want to delete this news item? This action cannot be undone.")) {
+    if (confirm("Tem certeza que deseja eliminar esta notícia? Esta ação não pode ser desfeita.")) {
       try {
         await deleteNewsItem(newsId);
-        toast.success("News deleted successfully");
+        toast.success("Notícia eliminada com sucesso");
         refetchNews();
       } catch (error) {
-        toast.error("Failed to delete news");
+        toast.error("Falha ao eliminar notícia");
         console.error(error);
       }
     }
@@ -188,8 +187,8 @@ const Admin = () => {
     return (
       <MainLayout>
         <div className="container mx-auto py-12 text-center">
-          <h1 className="text-2xl font-bold mb-4">Access Denied</h1>
-          <p>You don't have permission to access this page.</p>
+          <h1 className="text-2xl font-bold mb-4">Acesso Negado</h1>
+          <p>Você não tem permissão para acessar esta página.</p>
         </div>
       </MainLayout>
     );
@@ -199,25 +198,25 @@ const Admin = () => {
     <MainLayout>
       <div className="container mx-auto py-8">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-serif font-bold">News Management</h1>
+          <h1 className="text-2xl font-serif font-bold">Gestão de Notícias</h1>
           <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
             <DialogTrigger asChild>
               <Button className="gap-2">
                 <Plus size={16} />
-                Create News
+                Criar Notícia
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[625px]">
               <DialogHeader>
-                <DialogTitle>Create News</DialogTitle>
+                <DialogTitle>Criar Notícia</DialogTitle>
                 <DialogDescription>
-                  Fill in the details to create a new news article.
+                  Preencha os detalhes para criar uma nova notícia.
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="title">Title</Label>
+                    <Label htmlFor="title">Título</Label>
                     <Input
                       id="title"
                       name="title"
@@ -226,7 +225,7 @@ const Admin = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="authorName">Author</Label>
+                    <Label htmlFor="authorName">Autor</Label>
                     <Input
                       id="authorName"
                       name="authorName"
@@ -237,7 +236,7 @@ const Admin = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="summary">Summary</Label>
+                  <Label htmlFor="summary">Resumo</Label>
                   <Textarea
                     id="summary"
                     name="summary"
@@ -248,7 +247,7 @@ const Admin = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="content">Content</Label>
+                  <Label htmlFor="content">Conteúdo</Label>
                   <Textarea
                     id="content"
                     name="content"
@@ -260,7 +259,7 @@ const Admin = () => {
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="imageUrl">Image URL</Label>
+                    <Label htmlFor="imageUrl">URL da Imagem</Label>
                     <Input
                       id="imageUrl"
                       name="imageUrl"
@@ -269,13 +268,13 @@ const Admin = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="categoryId">Category</Label>
+                    <Label htmlFor="categoryId">Categoria</Label>
                     <Select 
                       onValueChange={(value) => handleSelectChange('categoryId', value)}
                       defaultValue={newsForm.categoryId.toString()}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Select category" />
+                        <SelectValue placeholder="Selecione a categoria" />
                       </SelectTrigger>
                       <SelectContent>
                         {categories?.map((category: Category) => (
@@ -289,7 +288,7 @@ const Admin = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="tags">Tags (comma separated)</Label>
+                  <Label htmlFor="tags">Tags (separadas por vírgula)</Label>
                   <Input
                     id="tags"
                     name="tags"
@@ -307,12 +306,12 @@ const Admin = () => {
                     onChange={handleCheckboxChange}
                     className="h-4 w-4 rounded border-gray-300"
                   />
-                  <Label htmlFor="featured">Featured Article</Label>
+                  <Label htmlFor="featured">Notícia em destaque</Label>
                 </div>
               </div>
               <DialogFooter>
-                <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>Cancel</Button>
-                <Button onClick={handleCreateNews}>Create</Button>
+                <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>Cancelar</Button>
+                <Button onClick={handleCreateNews}>Criar</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -322,15 +321,15 @@ const Admin = () => {
         <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
           <DialogContent className="sm:max-w-[625px]">
             <DialogHeader>
-              <DialogTitle>Edit News</DialogTitle>
+              <DialogTitle>Editar Notícia</DialogTitle>
               <DialogDescription>
-                Update the details of this news article.
+                Atualize os detalhes desta notícia.
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="edit-title">Title</Label>
+                  <Label htmlFor="edit-title">Título</Label>
                   <Input
                     id="edit-title"
                     name="title"
@@ -339,7 +338,7 @@ const Admin = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="edit-authorName">Author</Label>
+                  <Label htmlFor="edit-authorName">Autor</Label>
                   <Input
                     id="edit-authorName"
                     name="authorName"
@@ -350,7 +349,7 @@ const Admin = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="edit-summary">Summary</Label>
+                <Label htmlFor="edit-summary">Resumo</Label>
                 <Textarea
                   id="edit-summary"
                   name="summary"
@@ -361,7 +360,7 @@ const Admin = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="edit-content">Content</Label>
+                <Label htmlFor="edit-content">Conteúdo</Label>
                 <Textarea
                   id="edit-content"
                   name="content"
@@ -373,7 +372,7 @@ const Admin = () => {
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="edit-imageUrl">Image URL</Label>
+                  <Label htmlFor="edit-imageUrl">URL da Imagem</Label>
                   <Input
                     id="edit-imageUrl"
                     name="imageUrl"
@@ -382,13 +381,13 @@ const Admin = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="edit-categoryId">Category</Label>
+                  <Label htmlFor="edit-categoryId">Categoria</Label>
                   <Select 
                     onValueChange={(value) => handleSelectChange('categoryId', value)}
                     value={newsForm.categoryId.toString()}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select category" />
+                      <SelectValue placeholder="Selecione a categoria" />
                     </SelectTrigger>
                     <SelectContent>
                       {categories?.map((category: Category) => (
@@ -402,7 +401,7 @@ const Admin = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="edit-tags">Tags (comma separated)</Label>
+                <Label htmlFor="edit-tags">Tags (separadas por vírgula)</Label>
                 <Input
                   id="edit-tags"
                   name="tags"
@@ -420,12 +419,12 @@ const Admin = () => {
                   onChange={handleCheckboxChange}
                   className="h-4 w-4 rounded border-gray-300"
                 />
-                <Label htmlFor="edit-featured">Featured Article</Label>
+                <Label htmlFor="edit-featured">Notícia em destaque</Label>
               </div>
             </div>
             <DialogFooter>
-              <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>Cancel</Button>
-              <Button onClick={handleUpdateNews}>Update</Button>
+              <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>Cancelar</Button>
+              <Button onClick={handleUpdateNews}>Atualizar</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
@@ -433,17 +432,17 @@ const Admin = () => {
         {/* News Table */}
         <div className="bg-white shadow rounded-lg overflow-x-auto">
           {newsLoading ? (
-            <div className="p-8 text-center">Loading news items...</div>
+            <div className="p-8 text-center">Carregando notícias...</div>
           ) : (
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Title</TableHead>
-                  <TableHead>Category</TableHead>
-                  <TableHead>Author</TableHead>
-                  <TableHead>Date</TableHead>
+                  <TableHead>Título</TableHead>
+                  <TableHead>Categoria</TableHead>
+                  <TableHead>Autor</TableHead>
+                  <TableHead>Data</TableHead>
                   <TableHead>Status</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
+                  <TableHead className="text-right">Ações</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -453,14 +452,14 @@ const Admin = () => {
                   return (
                     <TableRow key={news.id}>
                       <TableCell className="font-medium">{news.title}</TableCell>
-                      <TableCell>{category?.name || 'Unknown'}</TableCell>
+                      <TableCell>{category?.name || 'Desconhecida'}</TableCell>
                       <TableCell>{news.authorName}</TableCell>
                       <TableCell>{new Date(news.publishDate).toLocaleDateString()}</TableCell>
                       <TableCell>
                         {isHidden ? (
-                          <span className="px-2 py-1 rounded-full text-xs bg-red-100 text-red-800">Unpublished</span>
+                          <span className="px-2 py-1 rounded-full text-xs bg-red-100 text-red-800">Despublicada</span>
                         ) : (
-                          <span className="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">Published</span>
+                          <span className="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">Publicada</span>
                         )}
                       </TableCell>
                       <TableCell className="text-right">
@@ -494,7 +493,7 @@ const Admin = () => {
                 {newsData?.length === 0 && (
                   <TableRow>
                     <TableCell colSpan={6} className="text-center py-8">
-                      No news items found. Create your first news article!
+                      Nenhuma notícia encontrada. Crie seu primeiro artigo!
                     </TableCell>
                   </TableRow>
                 )}

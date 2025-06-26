@@ -64,20 +64,20 @@ const NewsDetail = () => {
   }
 
   if (!news) {
-    return (
-      <MainLayout>
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
-          <p className="text-muted-foreground mb-6">
-            The article you're looking for doesn't exist or has been removed.
-          </p>
-          <Button asChild>
-            <Link to="/news">Back to News</Link>
-          </Button>
-        </div>
-      </MainLayout>
-    );
-  }
+  return (
+    <MainLayout>
+      <div className="container mx-auto px-4 py-16 text-center">
+        <h1 className="text-2xl font-bold mb-4">Artigo Não Encontrado</h1>
+        <p className="text-muted-foreground mb-6">
+          O artigo que você procura não existe ou foi removido.
+        </p>
+        <Button asChild>
+          <Link to="/news">Voltar para Notícias</Link>
+        </Button>
+      </div>
+    </MainLayout>
+  );
+}
 
   const formattedDate = format(new Date(news.publishDate), "MMMM d, yyyy");
 
@@ -89,7 +89,7 @@ const NewsDetail = () => {
           <Button variant="outline" size="sm" asChild className="gap-2">
             <Link to="/news">
               <ArrowLeft size={16} />
-              Back to News
+              Voltar para Notícias
             </Link>
           </Button>
         </div>
@@ -101,7 +101,7 @@ const NewsDetail = () => {
           </h1>
           <div className="flex flex-wrap items-center justify-between gap-4 text-muted-foreground">
             <div>
-              <span>By {news.authorName}</span>
+              <span>Por {news.authorName}</span>
               <span className="mx-2">•</span>
               <time dateTime={news.publishDate}>{formattedDate}</time>
             </div>

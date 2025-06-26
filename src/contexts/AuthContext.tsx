@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { User, getCurrentUser, login, logout, LoginCredentials } from "@/services/auth.service";
 import { useToast } from "@/components/ui/use-toast";
@@ -32,22 +31,22 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (loggedInUser) {
         setUser(loggedInUser);
         toast({
-          title: "Login successful",
-          description: `Welcome back, ${loggedInUser.name}!`,
+          title: "Login realizado com sucesso",
+          description: `Bem-vindo, ${loggedInUser.name}!`,
         });
         return true;
       } else {
         toast({
-          title: "Login failed",
-          description: "Invalid email or password",
+          title: "Falha no login",
+          description: "Email ou palavra-passe inválidos",
           variant: "destructive",
         });
         return false;
       }
     } catch (error) {
       toast({
-        title: "Login error",
-        description: "An unexpected error occurred",
+        title: "Erro ao fazer login",
+        description: "Ocorreu um erro inesperado",
         variant: "destructive",
       });
       return false;
@@ -60,8 +59,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     logout();
     setUser(null);
     toast({
-      title: "Logged out",
-      description: "You have been successfully logged out",
+      title: "Sessão terminada",
+      description: "A sua sessão foi encerrada com sucesso",
     });
   };
 
@@ -79,7 +78,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    throw new Error("useAuth deve ser usado dentro de um AuthProvider");
   }
   return context;
 };

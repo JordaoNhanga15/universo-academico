@@ -57,9 +57,9 @@ const Login = () => {
       <div className="container mx-auto px-4 py-16 flex justify-center">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-serif font-bold mb-2">Welcome Back</h1>
+            <h1 className="text-3xl font-serif font-bold mb-2">Bem-vindo</h1>
             <p className="text-muted-foreground">
-              Log in to access your Universo Academia account
+              Iniciar sessão para aceder à sua conta Universo Academia
             </p>
           </div>
 
@@ -85,7 +85,7 @@ const Login = () => {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>Palavra-passe</FormLabel>
                       <FormControl>
                         <div className="relative">
                           <Input 
@@ -115,20 +115,20 @@ const Login = () => {
 
             <div className="mt-6 text-center text-sm">
               <p className="text-muted-foreground">
-                Don't have an account?{" "}
+                Não tenho uma conta?{" "}
                 <Link to="/register" className="text-primary font-medium hover:underline">
-                  Register
+                  Registar
                 </Link>
               </p>
             </div>
           </div>
 
           {/* Demo credentials */}
-          <div className="mt-6 p-4 bg-muted rounded-lg">
+          {/* <div className="mt-6 p-4 bg-muted rounded-lg">
             <h3 className="font-medium mb-2">Demo Credentials</h3>
             <p className="text-sm mb-1"><strong>Admin:</strong> admin@universo.academia / admin123</p>
             <p className="text-sm"><strong>Editor:</strong> editor@universo.academia / editor123</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </MainLayout>
